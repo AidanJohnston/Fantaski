@@ -30,7 +30,7 @@ const routes: Routes = [
       {
         path: ':username',
         component: ProfileComponent,
-        canActivate: [AuthGuard]
+        canActivate: [NegateAuthGuard]
       }
     ]
   },
