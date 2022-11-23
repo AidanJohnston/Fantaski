@@ -7,7 +7,15 @@ export class AuthService {
 
   constructor() { }
 
-  isLoggedIn() {
+  get isLoggedIn() {
     return false;
+  }
+
+  async loginUserWithPassword(email: string, password: string) : Promise<boolean> {
+    return true;
+  }
+
+   async createUserWithPassword(email: string, password: string) : Promise<boolean>{
+    return false; 
   }
 }
