@@ -1,0 +1,50 @@
+<div class="center-card">
+    <mat-card class="customCard">
+        <form #signup="ngForm">
+            <mat-card-title>Sign Up</mat-card-title>
+            <mat-card-content>
+                <mat-form-field appearance="fill" style="width: 100%;">
+                    <mat-label>Username</mat-label>
+                    <input required matInput name="uname" ngModel>
+                </mat-form-field>
+                <mat-form-field appearance="fill" style="width: 100%;">
+                    <mat-label>Email</mat-label>
+                    <input required matInput name="email" ngModel>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill" style="width: 100%;">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" #password name="password" ngModel (keyup)="onPasswordChange(password.value)">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <mat-form-field appearance="fill" style="width: 100%;">
+                    <mat-label>Renter your password</mat-label>
+                    <input matInput [type]="hide_confirm ? 'password_confirm' : 'text'" #password_confirm name="password_confirm" ngModel (keyup)="onPasswordConfirmChange(password.value, password_confirm.value)">
+                    <button mat-icon-button matSuffix (click)="hide_confirm = !hide_confirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide_confirm">
+                        <mat-icon>{{hide_confirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <div style="width: 100%;" *ngIf="password.value.length > 0">
+                    <h2>Password Strength</h2>
+                    <mat-progress-bar [value]="value" [color]="color">
+                    </mat-progress-bar>
+                    <p>{{ text }}</p>
+                </div>
+                <div style="width: 100%;" *ngIf="lock && (password.value.length > 0 || password_confirm.value.length > 0)">
+                    <h2>Passwords do not match</h2>
+                </div>
+                <br>
+                <mat-error *ngIf="isError">Error creating account. Please Try again.</mat-error>
+                <button type="submit" mat-raised-button color="primary" [disabled]="lock" (click)="onSubmit(signup)">Sign Up</button>
+            </mat-card-content>
+        </form>
+        <mat-card-actions>
+            <a mat-button [routerLink]="'/login'">Log in instead</a>
+        </mat-card-actions>
+        <mat-card-footer>
+            <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+        </mat-card-footer>
+    </mat-card>
+</div>
