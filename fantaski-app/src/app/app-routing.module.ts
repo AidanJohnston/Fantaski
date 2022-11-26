@@ -22,6 +22,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        component: HomeComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: '',
         children: [
           {
             path: 'l',
