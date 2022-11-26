@@ -52,4 +52,9 @@ e2e/*.map
 .history
 .ionide
 
+.firebase/
+
+
+
+
 # End of https://www.toptal.com/developers/gitignore/api/angular,visualstudiocode
