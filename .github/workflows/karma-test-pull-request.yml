@@ -1,0 +1,19 @@
+name: Run Karma Unit test on PR to main
+
+on: [push, pull_request]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Enter Frontend app
+        run: cd fantaski-app
+
+      - name: Install npm dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npm test
