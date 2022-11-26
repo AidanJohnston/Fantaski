@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/fantaski-app/",
+    "public": "fantaski-app/dist/fantaski-app/",
     "ignore": [
       "firebase.json",
       "**/.*",
