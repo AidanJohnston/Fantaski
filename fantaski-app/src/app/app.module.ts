@@ -19,6 +19,7 @@ import { TeamComponent } from './pages/team/team.component';
 import { MatchupComponent } from './pages/matchup/matchup.component';
 import { PlayersComponent } from './pages/players/players.component';
 import { EventsComponent } from './pages/events/events.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { EventsComponent } from './pages/events/events.component';
     LeagueNavbarComponent,
     SearchbarComponent,
     UserprofileComponent,
+    FooterComponent,
     HomeComponent,
     LoginComponent,
     SignupComponent,
