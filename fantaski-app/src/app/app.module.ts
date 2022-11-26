@@ -11,14 +11,32 @@ import { LeagueComponent } from './pages/league/league.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule }   from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
+import { LeagueNavbarComponent } from './components/league-navbar/league-navbar.component';
+import { TeamComponent } from './pages/team/team.component';
+import { MatchupComponent } from './pages/matchup/matchup.component';
+import { PlayersComponent } from './pages/players/players.component';
+import { EventsComponent } from './pages/events/events.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
+    LeagueNavbarComponent,
+    SearchbarComponent,
+    UserprofileComponent,
+    FooterComponent,
     HomeComponent,
     LoginComponent,
     SignupComponent,
     ProfileComponent,
-    LeagueComponent
+    LeagueComponent,
+    TeamComponent,
+    MatchupComponent,
+    PlayersComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
