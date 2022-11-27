@@ -1,4 +1,6 @@
-.serach-bar{
-    height: 100%;
-    width: 50vh;
+.search-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

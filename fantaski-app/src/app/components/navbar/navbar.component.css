@@ -1,4 +1,10 @@
 .toolbar-spacer {
     flex: 1 1 auto;
     justify-content: space-between;
+    text-align: center;
+}
+.page-content {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 1.1em; 
 }

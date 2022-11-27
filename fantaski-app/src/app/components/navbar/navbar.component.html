@@ -1,7 +1,15 @@
-<mat-toolbar class="toolbar-spacer" color="primary">
-    <span>Fantaski</span>
-    <app-searchbar></app-searchbar>
-    <app-userprofile></app-userprofile>
+<mat-toolbar>
+        <mat-toolbar-row class="toolbar-spacer">
+            <div>
+                <button mat-button [routerLink]="''"><h1>Fantaski</h1></button>
+                <button mat-button [routerLink]="'/how-to-play'">How to Play</button>
+                <button mat-button>Leaderboard</button>
+            </div>
+            <app-searchbar></app-searchbar>
+            <app-userprofile></app-userprofile>
+        </mat-toolbar-row>
 </mat-toolbar>
-<router-outlet></router-outlet>
+<div class="page-content">
+    <router-outlet></router-outlet>
+</div>
 <app-footer></app-footer>
