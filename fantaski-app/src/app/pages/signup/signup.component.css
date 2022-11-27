@@ -4,3 +4,10 @@
   align-items: center;
   height: 100%;
 }
+
+.auth-list{
+    margin-top:auto;
+    margin-bottom:auto;
+    text-align:center;
+    padding: 15px;
+}

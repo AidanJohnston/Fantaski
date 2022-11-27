@@ -6,9 +6,8 @@
 }
 
 .auth-list{
-    display: block;
-}
-
-.auth-buttons {
-    display: block;
+    margin-top:auto;
+    margin-bottom:auto;
+    text-align:center;
+    padding: 15px;
 }
