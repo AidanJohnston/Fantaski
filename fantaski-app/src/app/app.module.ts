@@ -16,7 +16,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { LeagueComponent } from './pages/league/league.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
@@ -27,6 +27,10 @@ import { PlayersComponent } from './pages/players/players.component';
 import { EventsComponent } from './pages/events/events.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons';
+import { CreateLeagueComponent } from './pages/create-league/create-league.component';
+import { SearchComponent } from './pages/search/search.component';
+import { HowToPlayComponent } from './pages/how-to-play/how-to-play.component';
+import { AreYouSureComponent } from './components/league-navbar/are-you-sure/are-you-sure.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons
     TeamComponent,
     MatchupComponent,
     PlayersComponent,
-    EventsComponent
+    EventsComponent,
+    CreateLeagueComponent,
+    SearchComponent,
+    HowToPlayComponent,
+    AreYouSureComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -53,6 +61,7 @@ import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularMaterialModule,
     CoolSocialLoginButtonsModule
   ],
