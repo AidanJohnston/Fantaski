@@ -1,11 +1,58 @@
-<mat-toolbar class="toolbar-spacer" color="secondary">
-    <p>League selector!</p>
-    <div>
-        <a href="">Overview</a>
-        <a href="">Team</a>
-        <a href="">Matchups</a>
-        <a href="">Players</a>
-        <a href="">Events</a>
-    </div>
+<mat-divider></mat-divider>
+<mat-toolbar color="secondary">
+    <mat-toolbar-row>
+            <span>
+                <button mat-stroked-button [matMenuTriggerFor]="leagues">
+                    The Peepee Poopoo League
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+                <mat-menu #leagues="matMenu">
+                <button mat-menu-item disabled>The Peepee Poopoo League</button>
+                <button mat-menu-item>League Name 2</button>
+                <button mat-menu-item>League Name 2</button>
+                <button mat-menu-item>League Name 2</button>
+                <button mat-menu-item>League Name 2</button>
+                <mat-divider></mat-divider>
+                <a mat-menu-item  [routerLink]="'/create-league'">
+                    Create League
+                    <mat-icon>add_library</mat-icon>
+                </a>
+                </mat-menu>
+            </span>
+            <span class="toolbar-space">
+                <button mat-raised-button>Overview</button>
+                <button mat-button [matMenuTriggerFor]="teams">
+                    Teams
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+                <mat-menu #teams="matMenu">
+                    <button mat-menu-item>My Team</button>
+                    <mat-divider></mat-divider>
+                    <button mat-menu-item>Team 2</button>
+                    <button mat-menu-item>Team 3</button>
+                    <button mat-menu-item>Team 4</button>
+                    <button mat-menu-item>Team 5</button>
+                    <button mat-menu-item>Team 6</button>
+                </mat-menu>
+                <button mat-button>Matchups</button>
+                <button mat-button>Skiiers</button>
+            </span>
+            <span>
+                <button mat-stroked-button [matMenuTriggerFor]="leagueSettings">
+                    League Actions
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+                <mat-menu #leagueSettings="matMenu">
+                    <button mat-menu-item>
+                        League Settings
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                    <button mat-menu-item color="warn" (click)="openDialog()">
+                        Leave League
+                    </button>
+                </mat-menu> 
+            </span>
+    </mat-toolbar-row>
+    
 </mat-toolbar>
 <router-outlet></router-outlet>
