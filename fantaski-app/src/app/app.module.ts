@@ -26,6 +26,8 @@ import { MatchupComponent } from './pages/matchup/matchup.component';
 import { PlayersComponent } from './pages/players/players.component';
 import { EventsComponent } from './pages/events/events.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,8 @@ import { FooterComponent } from './components/footer/footer.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    CoolSocialLoginButtonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
