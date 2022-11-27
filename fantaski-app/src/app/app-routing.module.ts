@@ -4,8 +4,10 @@ import { LeagueNavbarComponent } from './components/league-navbar/league-navbar.
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AuthGuard } from './guards/auth/auth.guard';
 import { NegateAuthGuard } from './guards/auth/negate-auth.guard';
+import { CreateLeagueComponent } from './pages/create-league/create-league.component';
 import { EventsComponent } from './pages/events/events.component';
 import { HomeComponent } from './pages/home/home.component';
+import { HowToPlayComponent } from './pages/how-to-play/how-to-play.component';
 import { LeagueComponent } from './pages/league/league.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MatchupComponent } from './pages/matchup/matchup.component';
@@ -23,7 +25,10 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent,
-        canActivate: [AuthGuard]
+      },
+      {
+        path: 'how-to-play',
+        component: HowToPlayComponent
       },
       {
         path: '',
@@ -83,6 +88,11 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: 'create-league',
+    component: CreateLeagueComponent,
+  },
+
   {
     path: 'login', 
     component: LoginComponent,
