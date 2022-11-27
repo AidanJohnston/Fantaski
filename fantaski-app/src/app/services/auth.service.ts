@@ -111,4 +111,9 @@ export class AuthService {
     else
       return false;
   }
+
+  getUser() : User {
+    const user = JSON.parse(localStorage.getItem('user') ?? "null");
+    return user;
+  }
 }

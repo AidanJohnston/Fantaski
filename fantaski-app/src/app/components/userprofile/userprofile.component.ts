@@ -7,9 +7,12 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./userprofile.component.css']
 })
 export class UserprofileComponent {
-  constructor(private _authService : AuthService) {}
+  constructor(private _authService : AuthService) {
+    this.accountName = _authService.getUser().email
+  }
 
   loading = false;
+  accountName = ""
 
   logout() {
     this.loading = true;
