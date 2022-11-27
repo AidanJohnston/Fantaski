@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-header>Create a Fantaski League</mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-vertical-stepper [linear]="true" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Enter a League Name</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="League Name" #league formControlName="firstCtrl" required (keyup)="onLeagueNameChanged(league.value)">
+        <mat-hint align="start"> {{ leaguename }}</mat-hint>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your address</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-vertical-stepper>
+<mat-divider></mat-divider>
+<button mat-raised-button [routerLink]="''">Cancel League Creation</button>
+</mat-card>
