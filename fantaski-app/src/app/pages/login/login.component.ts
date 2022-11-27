@@ -15,12 +15,18 @@ export class LoginComponent {
   isLoading = false;
   isError = false;
   hide = true;
+  formDisabled = false
+
+  isAuthError = false;
 
 onSubmit(login: NgForm){
     this.isLoading = true;
+    this.isError = false
+    this.isAuthError = false;
     this._authService.loginUserWithPassword(login.value['email'], login.value['password']).then(res => {
       if(res){
         this.isLoading = false;
+        this._router.navigate(['']);
       }
       else{
         this.isError = true;
@@ -29,4 +35,19 @@ onSubmit(login: NgForm){
       }
     });
   }
+  
+  async googleLogin() {
+    this.formDisabled = true;
+    this.isError = false;
+    this.isAuthError = false;
+    this._authService.googleAuth().then((res) => {
+      if(res){
+        this._router.navigate([''])
+      }
+      else {
+        this.formDisabled = false
+        this.isAuthError = true
+      }
+    })
+}
 }

@@ -6,13 +6,26 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - main
+
 jobs:
-  build_and_deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: fantaski-app
+    name: Deploy to Fireabse Hosting on Merge
     steps:
-      - uses: actions/checkout@v2
-      - run: 'cd fantaski-app && npm ci && npm run build'
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Build deployment
+        run: npm run build
+      
+      - name: Deploy to firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FANTASKI_FC8F7 }}'

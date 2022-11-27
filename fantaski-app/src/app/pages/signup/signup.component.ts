@@ -33,7 +33,7 @@ export class SignupComponent {
       "value": 10
     },
     {
-      "text": "Weak",
+      "text": "Weak :(",
       "color": "warn",
       "value" : 25
     },
@@ -48,7 +48,7 @@ export class SignupComponent {
       "value" : 75
     },
     {
-      "text": "Strong",
+      "text": "Strong!",
       "color": "primary",
       "value" : 100
     }
@@ -87,13 +87,10 @@ export class SignupComponent {
   onSubmit(signup : NgForm) {
     this.isLoading = true;
 
-    const user = {
-    };
-
     this._authService.createUserWithPassword(signup.value['email'], signup.value['password']).then(res => {
       if(res) {
         this.isLoading = false;
-        //this.router.navigate(['verify-email']);
+        this._router.navigate(['']);
       }
       else {
         this.isLoading = false;
