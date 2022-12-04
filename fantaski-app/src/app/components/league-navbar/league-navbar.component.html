@@ -1,10 +1,10 @@
 <mat-divider></mat-divider>
 <mat-toolbar color="secondary">
-    <mat-toolbar-row>
-            <span>
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
+            <span fxFlex>
                 <button mat-stroked-button [matMenuTriggerFor]="leagues">
                     The Peepee Poopoo League
-                    <mat-icon>expand_more</mat-icon>
+                    <mat-icon matSuffix>expand_more</mat-icon>
                 </button>
                 <mat-menu #leagues="matMenu">
                 <button mat-menu-item disabled>The Peepee Poopoo League</button>
@@ -19,8 +19,8 @@
                 </a>
                 </mat-menu>
             </span>
-            <span class="toolbar-space">
-                <button mat-raised-button>Overview</button>
+            <span fxFlex>
+                <button mat-flat-button color="primary">Overview</button>
                 <button mat-button [matMenuTriggerFor]="teams">
                     Teams
                     <mat-icon>expand_more</mat-icon>
@@ -37,10 +37,10 @@
                 <button mat-button>Matchups</button>
                 <button mat-button>Skiiers</button>
             </span>
-            <span>
+            <span fxFlex fxFlexAlign="center end">
                 <button mat-stroked-button [matMenuTriggerFor]="leagueSettings">
                     League Actions
-                    <mat-icon>expand_more</mat-icon>
+                    <mat-icon matSuffix>expand_more</mat-icon>
                 </button>
                 <mat-menu #leagueSettings="matMenu">
                     <button mat-menu-item>
