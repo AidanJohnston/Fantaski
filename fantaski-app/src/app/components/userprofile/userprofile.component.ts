@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,8 +12,16 @@ export class UserprofileComponent {
     this.accountName = _authService.getUser().email
   }
 
+  @Output() themeEmit = new EventEmitter<boolean>()
+
   loading = false;
   accountName = ""
+  theme = ""
+  isChecked = false;
+
+  onChange(value: MatSlideToggleChange) {
+
+  }
 
   logout() {
     this.loading = true;
