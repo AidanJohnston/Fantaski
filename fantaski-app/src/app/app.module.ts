@@ -31,6 +31,8 @@ import { CreateLeagueComponent } from './pages/create-league/create-league.compo
 import { SearchComponent } from './pages/search/search.component';
 import { HowToPlayComponent } from './pages/how-to-play/how-to-play.component';
 import { AreYouSureComponent } from './components/league-navbar/are-you-sure/are-you-sure.component';
+import { StandingComponent } from './components/standing/standing.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { AreYouSureComponent } from './components/league-navbar/are-you-sure/are
     CreateLeagueComponent,
     SearchComponent,
     HowToPlayComponent,
-    AreYouSureComponent
+    AreYouSureComponent,
+    StandingComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -63,9 +66,16 @@ import { AreYouSureComponent } from './components/league-navbar/are-you-sure/are
     FormsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
-    CoolSocialLoginButtonsModule
+    CoolSocialLoginButtonsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  isDarkTheme = false;
+
+  changeTheme(isDark : boolean) {
+    this.isDarkTheme = isDark ? true : false
+  }
+}

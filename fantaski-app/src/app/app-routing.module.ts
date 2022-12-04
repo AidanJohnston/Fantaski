@@ -25,10 +25,12 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'how-to-play',
-        component: HowToPlayComponent
+        component: HowToPlayComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: '',
