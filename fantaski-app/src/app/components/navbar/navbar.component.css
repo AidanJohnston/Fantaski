@@ -1,10 +1,30 @@
-.toolbar-spacer {
-    flex: 1 1 auto;
-    justify-content: space-between;
-    text-align: center;
-}
 .page-content {
     padding-left: 20%;
     padding-right: 20%;
-    padding-bottom: 1.1em; 
+    padding-bottom: 6vh; 
+}
+
+div {
+    overflow: inherit;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-sidenav-container{
+  min-height: 93vh !important;
+}
+
+.mat-toolbar{
+  height: 7vh;
+}
+
+button{
+    min-width: min-content;
+}
+
+.spacer {
+flex: 1 1 auto;
 }
