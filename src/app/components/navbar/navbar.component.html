@@ -1,0 +1,43 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxFlex>
+        <div>
+            <div fxFlex fxShow="true" fxHide.gt-sm="true">
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+            <div fxFlex>
+                <button mat-button [routerLink]="''"><h1>Fantaski</h1></button>
+            </div>
+        </div>
+    </div>
+    <app-searchbar fxFlex></app-searchbar>
+    <div fxFlex fxShow="true" fxHide.lt-md="true" fxLayout="row" fxFlexAlign="center end">
+            <button mat-button color="primary" [routerLink]="'/create-league'">
+                Create a League
+                <mat-icon>add_library</mat-icon>
+            </button>
+            <button mat-button [routerLink]="'/how-to-play'">How to Play</button>
+            <button mat-button>Leaderboard</button>
+            <app-userprofile></app-userprofile>
+    </div>   
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill>
+        <mat-sidenav #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
+            <div fxLauout=""column>
+                <button mat-button color="primary" [routerLink]="'/create-league'">
+                    Create a League
+                    <mat-icon>add_library</mat-icon>
+                </button>
+                <button mat-button [routerLink]="'/how-to-play'">How to Play</button>
+                <button mat-button>Leaderboard</button>
+                <app-userprofile></app-userprofile>
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content fxFlexFill>
+            <div class="page-content">
+                <router-outlet></router-outlet>
+            </div>
+            <app-footer></app-footer>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
